@@ -1,0 +1,50 @@
+<center><h1> Sign Up</h1>
+<%= form_for :article, url: articles_path do |f| %>
+ <% if @article.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@article.errors.count, "error") %> prohibited
+        this page from being saved:
+      </h2>
+      <ul>
+        <% @article.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+	<p>
+    <%= f.label :email %><br>
+    <%= f.email_field :email, placeholder: "enter email", autofocus: true %>
+
+  </p>
+  <p>
+  <%= f.label :mobile_number %><br>
+  <%= f.phone_field :mobile_number, placeholder: "enter mobile number"%>
+ 
+  <p>
+    <%= f.label :date %><br>
+   
+  <%= f.date_field :date %>
+  </p>
+  <p>
+    <%= f.label :password %><br>
+   
+  <%= f.password_field :password, placeholder: "password" %>
+  </p>
+  
+    <p>
+    <%= f.label :confirm_password %><br>
+   
+  <%= f.password_field :password_confirmation, placeholder: "confirm password" %>
+  </p>
+  <p>
+  <%= f.label :remember_me %><br>
+  <%= f.check_box :remember_me %>  
+   
+  </p>
+  <p>
+    <%= f.submit "Create My Account" %>
+  </p>
+  </center>
+<% end %>
