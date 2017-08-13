@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170812102823) do
+ActiveRecord::Schema.define(version: 20170813071731) do
 
   create_table "articles", force: :cascade do |t|
     t.string "email"
@@ -20,7 +20,11 @@ ActiveRecord::Schema.define(version: 20170812102823) do
     t.string "password"
     t.string "password_confirmation"
     t.boolean "remember_me"
-    t.bigint "mobile_number"
+    t.integer "mobile_number", limit: 8
+    t.string "state"
+    t.string "gender"
+    t.string "first_name"
+    t.string "last_name"
   end
 
 end

@@ -19,6 +19,9 @@ def create
 end
 private
   def article_params
-    params.require(:article).permit(:email, :mobile_number, :date, :password, :password_confirmation, :remember_me)
+    params.require(:article).permit(:first_name, :last_name, :email,
+     :mobile_number,
+       :state, :date, :gender, :password,
+        :password_confirmation, :category, :remember_me)
 end
 end
